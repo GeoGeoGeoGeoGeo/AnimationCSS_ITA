@@ -1,0 +1,97 @@
+body {
+    margin: 0;
+    background-color: black;
+    
+}
+
+#main { /*KVADRAT U KOM SE NALAZE OSTALI ELEMENTI*/
+    width: 700px;
+    height: 600px;
+    background-color: #050210;
+    margin: 0 auto;
+    position: relative;
+    transform: translate(0, 5%);
+    
+    
+}
+
+#main::after { /*KRUG KOJI POKRIVA KRUG SA GRADIJENTIMA*/
+    content: " ";
+    width: 320px;
+    height: 320px;
+    left: 190px;
+    top: 125px;
+    background-color: black;
+    border-radius: 100%;
+    position: absolute;
+    
+
+}
+
+#first { /*KRUG SA GRADIJENTIMA*/
+    width: 380px;
+    height: 380px;
+    margin: 0 auto;
+    border-radius: 100%;
+    position: relative;
+    transform: translate(0, 25%);
+    background: linear-gradient(#fb5dad, #55fb9f, #b97aff);
+    
+    
+}
+
+
+#first::after { /*PROŠIRENI KRUG SA GRADIJENTIMA*/
+    content: " ";
+    width: 380px;
+    height: 380px;
+    border-radius: 100%;
+    position: absolute;
+    background:linear-gradient(#fb5dad, #55fb9f, #b97aff);
+    filter: blur(30px);
+    animation-name: rotate;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+}
+
+@keyframes rotate { /*ANIMACIJA ZA KRUG SA GRADIJENTIMA*/
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+#second { /*ANIMIRANI KRUG U SREDINI*/
+    width: 290px;
+    height: 290px;
+    left: 205px;
+    top: 140px;
+    position: absolute;
+    background-color: #050210;
+    border-radius: 100%;
+    z-index: 1;
+    animation-name: scale;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+
+}
+
+@keyframes scale { /*ANIMACIJA ZA KRUG U SREDINI*/
+    0% {
+        transform: scale(0.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+
+
